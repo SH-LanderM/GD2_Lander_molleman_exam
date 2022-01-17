@@ -729,6 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 519420031}
+  _roomName: {fileID: 763072386}
 --- !u!1 &1575112612
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,3 +958,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 519420031}
+  _roomName: {fileID: 763072386}
