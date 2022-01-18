@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Gunmoveforward : MonoBehaviour
+public class GunScript : MonoBehaviour 
 {
     [SerializeField]
     private SpriteRenderer renderer;
@@ -12,4 +13,6 @@ public class Gunmoveforward : MonoBehaviour
     {
         renderer.sortingOrder = 11;
     }
+    
+    
 }

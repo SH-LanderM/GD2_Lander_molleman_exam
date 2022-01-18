@@ -10,27 +10,41 @@ public class SwitchRooms : MonoBehaviour
     private GameObject Right;
     [SerializeField]
     private GameObject WindowUI;
+    [SerializeField]
+    private GameObject CraftingUi;
+
 
     public string CurrentRoom = "Window";
+
+
+    private void Awake()
+    {
+        CraftingUi.SetActive(false);
+
+    }
     private void Update()
     {
         if(CurrentRoom == "Window")
         {
-            WindowUI.active = true;
-            Left.active = true;
-            Right.active = true;
+            CraftingUi.SetActive(false);
+            WindowUI.SetActive(true);
+            Left.SetActive(true);
+            Right.SetActive(true);
         }
         if (CurrentRoom == "Crafting")
         {
-            WindowUI.active = false;
-            Left.active = false;
-            Right.active = true;
+            CraftingUi.SetActive(true);
+            WindowUI.SetActive(false);
+            Left.SetActive(false);
+            Right.SetActive(true);
+            
         }
         if (CurrentRoom == "Private")
         {
-            WindowUI.active = false;
-            Left.active = true;
-            Right.active = false;
+            CraftingUi.SetActive(false);
+            WindowUI.SetActive(false);
+            Left.SetActive(true);
+            Right.SetActive(false);
         }
     }
 }
