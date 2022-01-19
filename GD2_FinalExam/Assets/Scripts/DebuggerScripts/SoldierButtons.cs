@@ -13,6 +13,7 @@ public class SoldierButtons : MonoBehaviour
     private GameObject _currentSoldier;
     private GameObject _currentGun;
     private bool HasGun;
+    public bool Gunrepaired;
 
 
 
@@ -21,21 +22,25 @@ public class SoldierButtons : MonoBehaviour
         if(_currentSoldier == null)
         {
             _currentSoldier = Instantiate(_soldierPrefab, new Vector3(5, 0, 0), Quaternion.identity);
+            Gunrepaired = false;
             _currentSoldier.GetComponent<Animator>().Play("Soldier");
         }
     }
     public void RemoveSoldier()
     {
+        if(Gunrepaired == true &&_currentGun !=null)
+        
         
         if (_currentSoldier != null)
         {
 
             _currentSoldier.GetComponent<Animator>().Play("SoldierExit");
-            if(_currentGun!=null)
+            if (_currentGun != null)
             {
                 Destroy(_currentGun);
             }
-                Invoke("DestroySoldier",1f );
+                Invoke("DestroySoldier", 1f);
+            
        
         }
     }

@@ -19,6 +19,15 @@ public class ResourcesScript : MonoBehaviour , IDragHandler , IBeginDragHandler,
     private Canvas canvas;
     [SerializeField]
     private RectTransform UI;
+
+    public enum resourceType
+    {
+        Ductape,
+        SomethingElse
+    };
+
+    public resourceType TypeOfResource;
+    
     private void Awake()
     {
         StartingTransform = this.GetComponent<RectTransform>().anchoredPosition;
@@ -46,15 +55,5 @@ public class ResourcesScript : MonoBehaviour , IDragHandler , IBeginDragHandler,
         canvasGroup.blocksRaycasts = true;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

@@ -6,33 +6,62 @@ using UnityEngine.EventSystems;
 
 public class Equipement : MonoBehaviour , IDropHandler
 {
-    [SerializeField]
+    
     private GameObject equipement;
 
+    [SerializeField]
+    private Sprite Gunrepaired;
+
+    [SerializeField]
+    private Sprite Empty;
+    [SerializeField]
+    private SoldierButtons soldierButtons;
+
     public bool Hasgun = false;
+
+    private ResourcesScript Resource;
+
+    
 
     public void OnDrop(PointerEventData eventData)
     {
         if(eventData.pointerDrag != null && Hasgun)
         {
+            Resource = eventData.pointerDrag.GetComponent<ResourcesScript>();
             Debug.Log("Drop");
-            //Temporary until real images made 
-            this.gameObject.GetComponent<Image>().color = Color.green;
+            if (Resource.TypeOfResource == ResourcesScript.resourceType.Ductape)
+            {
+                this.gameObject.GetComponent<Image>().sprite = Gunrepaired;
+                soldierButtons.Gunrepaired = true;
+            }
         }
     }
 
     public void TakeGun()
     {
         equipement = GameObject.FindGameObjectWithTag("Gun");
-        this.gameObject.GetComponent<Image>().sprite = equipement.GetComponent<SpriteRenderer>().sprite;
+        if (equipement != null && !soldierButtons.Gunrepaired)
+        {
+            this.gameObject.GetComponent<Image>().sprite = equipement.GetComponent<SpriteRenderer>().sprite;
+            equipement.GetComponent<Animator>().enabled = false;
 
-        //Temporary until real images made 
-        this.gameObject.GetComponent<Image>().color = Color.red;
+            
 
-        equipement.SetActive(false);
-        Hasgun = true;
-        
+            equipement.SetActive(false); 
+            Hasgun = true;
+        }
 
+    }
 
+    public void GunRepaired()
+    {
+        if(equipement != null && soldierButtons.Gunrepaired)
+        {
+            this.gameObject.GetComponent<Image>().sprite = Empty;
+            equipement.GetComponent<SpriteRenderer>().sprite = Gunrepaired;
+            equipement.SetActive(true);
+            Hasgun = false;
+            
+        }
     }
 }
