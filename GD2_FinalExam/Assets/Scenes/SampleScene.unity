@@ -235,7 +235,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Remove
+  m_Text: Dismiss
 --- !u!222 &21952367
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -280,8 +280,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 415, y: 312}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 453, y: 298}
+  m_SizeDelta: {x: 220.1708, y: 61.1228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112279015
 MonoBehaviour:
@@ -1049,7 +1049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Spawn
+  m_Text: Call Next Soldier
 --- !u!222 &751961993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1221,6 +1221,7 @@ RectTransform:
   - {fileID: 1802272097}
   - {fileID: 1514822610}
   - {fileID: 2103209958}
+  - {fileID: 1241267057}
   m_Father: {fileID: 515222017}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1243,6 +1244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soldierPrefab: {fileID: 1837525701468535313, guid: 22d6ab31f05ed5a4c8fcc42758924287, type: 3}
   _gunPrefab: {fileID: 1392515595059912313, guid: 6afc9b69fe134b44cbf7390ecc7c804a, type: 3}
+  _gameLoop: {fileID: 1295311169}
+  _text: {fileID: 1241267056}
   Gunrepaired: 0
 --- !u!1 &1098194934
 GameObject:
@@ -1459,6 +1462,129 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1241267056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1241267057}
+  - component: {fileID: 1241267059}
+  - component: {fileID: 1241267058}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1241267057
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241267056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 820058701}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 13, y: 132.37}
+  m_SizeDelta: {x: 524.907, y: 140.2069}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1241267058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241267056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 37
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 187
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: There Doesn't seem to be anyone
+--- !u!222 &1241267059
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241267056}
+  m_CullTransparentMesh: 1
+--- !u!1 &1295311168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295311170}
+  - component: {fileID: 1295311169}
+  m_Layer: 0
+  m_Name: Gameloop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1295311169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295311168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee79462efd5b7954b979c60d8ac8f5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numberSoldiersLeft: 1
+--- !u!4 &1295311170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295311168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1073.989, y: 693.02747, z: -3451.875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455865067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,8 +1768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 415, y: 240.4}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 453.01, y: 232}
+  m_SizeDelta: {x: 220.16, y: 59.0479}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514822611
 MonoBehaviour:
@@ -1809,7 +1935,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: gun
+  m_Text: Ask for Gun
 --- !u!222 &1633948701
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1946,8 +2072,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 415, y: 275}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 453, y: 168}
+  m_SizeDelta: {x: 220.17, y: 52.8234}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1802272098
 MonoBehaviour:

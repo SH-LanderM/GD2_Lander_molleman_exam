@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class SoldierButtons : MonoBehaviour
@@ -9,21 +10,36 @@ public class SoldierButtons : MonoBehaviour
     private GameObject _soldierPrefab;
     [SerializeField]
     private GameObject _gunPrefab;
+    [SerializeField]
+    private GameLoop _gameLoop;
+    [SerializeField]
+    private GameObject _text;
 
     private GameObject _currentSoldier;
     private GameObject _currentGun;
     private bool HasGun;
     public bool Gunrepaired;
 
-
+    private void Awake()
+    {
+        _text.SetActive(false);
+    }
 
     public void SpawnSoldier()
     {
         if(_currentSoldier == null)
         {
-            _currentSoldier = Instantiate(_soldierPrefab, new Vector3(5, 0, 0), Quaternion.identity);
-            Gunrepaired = false;
-            _currentSoldier.GetComponent<Animator>().Play("Soldier");
+            if (_gameLoop._numberSoldiersLeft > 0)
+            {
+                _currentSoldier = Instantiate(_soldierPrefab, new Vector3(5, 0, 0), Quaternion.identity);
+                Gunrepaired = false;
+                _currentSoldier.GetComponent<Animator>().Play("Soldier");
+                _gameLoop._numberSoldiersLeft -= 1;
+            }
+            else if (_gameLoop._numberSoldiersLeft <= 0)
+            {
+                _text.SetActive(true);
+            }
         }
     }
     public void RemoveSoldier()
