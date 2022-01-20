@@ -19,9 +19,10 @@ public class Equipement : MonoBehaviour , IDropHandler
 
     public bool Hasgun = false;
 
-    private ResourcesScript Resource;
-
     
+    private ResourcesScript Resource;
+    
+
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -55,10 +56,11 @@ public class Equipement : MonoBehaviour , IDropHandler
 
     public void GunRepaired()
     {
-        if(equipement != null && soldierButtons.Gunrepaired)
+        if(equipement != null )
         {
+            equipement.GetComponent<SpriteRenderer>().sprite = this.gameObject.GetComponent<Image>().sprite;
             this.gameObject.GetComponent<Image>().sprite = Empty;
-            equipement.GetComponent<SpriteRenderer>().sprite = Gunrepaired;
+            
             equipement.SetActive(true);
             Hasgun = false;
             
