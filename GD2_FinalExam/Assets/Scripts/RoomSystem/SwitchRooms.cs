@@ -12,6 +12,8 @@ public class SwitchRooms : MonoBehaviour
     private GameObject WindowUI;
     [SerializeField]
     private GameObject CraftingUi;
+    [SerializeField]
+    private GameObject PrivateUi;
 
 
     public string CurrentRoom = "Window";
@@ -19,6 +21,7 @@ public class SwitchRooms : MonoBehaviour
 
     private void Awake()
     {
+        PrivateUi.SetActive(false);
         CraftingUi.SetActive(false);
 
     }
@@ -26,6 +29,7 @@ public class SwitchRooms : MonoBehaviour
     {
         if(CurrentRoom == "Window")
         {
+            PrivateUi.SetActive(false);
             CraftingUi.SetActive(false);
             WindowUI.SetActive(true);
             Left.SetActive(true);
@@ -33,6 +37,7 @@ public class SwitchRooms : MonoBehaviour
         }
         if (CurrentRoom == "Crafting")
         {
+            PrivateUi.SetActive(false);
             CraftingUi.SetActive(true);
             WindowUI.SetActive(false);
             Left.SetActive(false);
@@ -41,6 +46,7 @@ public class SwitchRooms : MonoBehaviour
         }
         if (CurrentRoom == "Private")
         {
+            PrivateUi.SetActive(true);
             CraftingUi.SetActive(false);
             WindowUI.SetActive(false);
             Left.SetActive(true);

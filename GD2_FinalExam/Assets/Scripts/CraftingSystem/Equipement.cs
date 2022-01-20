@@ -13,6 +13,9 @@ public class Equipement : MonoBehaviour , IDropHandler
     private Sprite Gunrepaired;
 
     [SerializeField]
+    private GameLoop _gameloop;
+
+    [SerializeField]
     private Sprite Empty;
     [SerializeField]
     private SoldierButtons soldierButtons;
@@ -34,6 +37,7 @@ public class Equipement : MonoBehaviour , IDropHandler
             {
                 this.gameObject.GetComponent<Image>().sprite = Gunrepaired;
                 soldierButtons.Gunrepaired = true;
+                _gameloop.DuctapeUsed++;
             }
         }
     }

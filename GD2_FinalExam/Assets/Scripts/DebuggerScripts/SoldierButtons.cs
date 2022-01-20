@@ -88,10 +88,12 @@ public class SoldierButtons : MonoBehaviour
                 {
                     TextBoxManager.Text.text = "Thank you sir";
                     _gameLoop._SoldierLeft++;
+                    _gameLoop.Succesfullrepairs++;
                 }
                 else if (Gunrepaired == false)
                 {
                     TextBoxManager.Text.text = "I'll never make it with this";
+                    _gameLoop.FailedRepairs++;
                 }
                 
                 if (_currentGun != null)
@@ -122,6 +124,8 @@ public class SoldierButtons : MonoBehaviour
         _gameLoop._numberSoldiers = _gameLoop._SoldierLeft;
         _gameLoop._SoldierLeft = 0;
         _gameLoop.NoMoreSoldiers = false;
+
+        _gameLoop.NumberDays++;
         _text.SetActive(false);
         NextDay.SetActive(false);
         Call.SetActive(true);
